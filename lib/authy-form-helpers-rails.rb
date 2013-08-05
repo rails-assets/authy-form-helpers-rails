@@ -1,4 +1,4 @@
-require "authy-form-helpers/version"
+require "authy-form-helpers-rails/version"
 
 module AuthyFormHelpers
   module Rails
