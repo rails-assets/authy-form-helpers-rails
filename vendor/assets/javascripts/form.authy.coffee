@@ -406,7 +406,7 @@ window.Authy.UI = ->
   setCountryField = ->
     defaultListId = 0
     field = document.getElementById("authy-countries")
-    countryCode = field.value
+    countryCode = field?.value
 
     if countryCode isnt ''
       for country in countriesList
