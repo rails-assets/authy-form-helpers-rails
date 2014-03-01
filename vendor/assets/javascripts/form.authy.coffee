@@ -404,8 +404,9 @@ window.Authy.UI = ->
   # Display the country code that was selected before submitting the form
   #
   setCountryField = ->
-    defaultListId = 0
     field = document.getElementById("authy-countries")
+    return  unless field
+    defaultListId = 0
     countryCode = field?.value
 
     if countryCode isnt ''
