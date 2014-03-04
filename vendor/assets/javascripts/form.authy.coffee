@@ -483,6 +483,11 @@ window.Authy.UI = ->
   @setCountryCode = (listId, countryCode) ->
     document.getElementById("country-code-" + listId).value = countryCode
 
+  @setCountryInput = (listId, countryCode) ->
+    filteredCountriesList = countriesList.filter (countryObj) ->
+      return countryObj.code == countryCode
+    document.getElementById("countries-input-" + listId).value = filteredCountriesList[0].country
+
   @setTooltip = (title, msg) ->
     tooltip = document.getElementById("authy-tooltip")
     return  unless tooltip
