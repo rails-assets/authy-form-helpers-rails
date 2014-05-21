@@ -404,8 +404,9 @@ window.Authy.UI = ->
   # Display the country code that was selected before submitting the form
   #
   setCountryField = ->
-    defaultListId = 0
     field = document.getElementById("authy-countries")
+    return  unless field
+    defaultListId = 0
     countryCode = field?.value
 
     if countryCode isnt ''
@@ -481,6 +482,11 @@ window.Authy.UI = ->
 
   @setCountryCode = (listId, countryCode) ->
     document.getElementById("country-code-" + listId).value = countryCode
+
+  @setCountryInput = (listId, countryCode) ->
+    filteredCountriesList = countriesList.filter (countryObj) ->
+      return countryObj.code == countryCode
+    document.getElementById("countries-input-" + listId).value = filteredCountriesList[0].country
 
   @setTooltip = (title, msg) ->
     tooltip = document.getElementById("authy-tooltip")
